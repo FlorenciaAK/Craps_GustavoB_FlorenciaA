@@ -1,7 +1,5 @@
 fichas = 50 #por exemplo já que a gente decide
-fichas_disponíveis = print ("Você possui {0} fichas".format(fichas))
-continuar = input("Você deseja continuar ou abandonar o jogo? (escolher entre continuar ou abandonar ou consultar regras: ")
-continuar = True
+continuar = "continuar"
 fichas_suficientes = fichas>0 
 aposta = int(input("Qual o valor da sua aposta?: "))
 
@@ -10,9 +8,11 @@ import random
 
 print ("Você está jogando")
 
-while continuar and fichas_suficientes:
-    if continuar=="continuar":
-        continuar=True
+while continuar==True and fichas_suficientes==True:
+    fichas_disponíveis = print ("Você possui {0} fichas".format(fichas))
+    continuar = input("Você deseja continuar ou abandonar o jogo? (escolher entre continuar ou abandonar ou consultar regras: ")
+    if continuar == "continuar"
+        continuar==True
         if fichas_suficientes==True:
             point = True
             def pass_line_bet(dado1,dado2):
@@ -40,11 +40,13 @@ while continuar and fichas_suficientes:
                         soma = dado1 + dado2
                         if soma == point:
                             #jogador ganha
+                            point = False
                             fichas = fichas + aposta
                             return fichas
                             print ("Você acertou! Fichas disponíveis = {0}".format(fichas))
                         elif soma == 7:
                             #jogador perde tudo, jogo acaba
+                            point = False
                             fichas = fichas - fichas
                             return fichas
                             print ("Você perde tudo! Game over")
