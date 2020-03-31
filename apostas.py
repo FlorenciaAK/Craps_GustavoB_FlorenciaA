@@ -1,11 +1,7 @@
 print ("Você está jogando")
 
-while continuar and fichas_suficientes:
-    if continuar=="continuar":
-        continuar=True
-        if fichas>0:
-            fichas_suficientes=True
-        else:
-            fichas_suficientes=False
-    else:
-        continuar=False
+while fichas_suficientes==True:
+    fichas_disponíveis = print ("Você possui {0} fichas".format(fichas))
+    continuar = input("Você deseja continuar ou abandonar o jogo? (escolher entre continuar ou abandonar ou consultar regras: ")
+    while continuar == "continuar":
+        tipo_aposta = input("Qual aposta voce deseja realizar? pass line bet/field/any craps/twelv/nehuma")

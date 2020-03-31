@@ -1,21 +1,19 @@
 fichas = 50 #por exemplo já que a gente decide
-continuar = "continuar"
 fichas_suficientes = fichas>0 
-aposta = int(input("Qual o valor da sua aposta?: "))
+
 
 import random
 
 
 print ("Você está jogando")
 
-while continuar==True and fichas_suficientes==True:
+while fichas_suficientes==True:
     fichas_disponíveis = print ("Você possui {0} fichas".format(fichas))
     continuar = input("Você deseja continuar ou abandonar o jogo? (escolher entre continuar ou abandonar ou consultar regras: ")
-    if continuar == "continuar"
-        continuar==True
-        if fichas_suficientes==True:
-            point = True
-            def pass_line_bet(dado1,dado2):
+    while continuar == "continuar":
+        tipo_aposta = input("Qual aposta voce deseja realizar? pass line bet/field/any craps/twelv/nehuma")
+         def pass_line_bet(dado1,dado2):
+            aposta_plb= int(input("Qual o valor da sua aposta?: "))
                 dado1 = random.randint(1,6)
                 dado2 = random.randint(1,6)
                 soma = dado1 + dado2
@@ -57,9 +55,3 @@ while continuar==True and fichas_suficientes==True:
                                 dado2 = random.randint(1,6)
                                 point (dado1,dado2)
 
-        else:
-            fichas_suficientes=False
-            break
-    else:
-        continuar=False
-        break
