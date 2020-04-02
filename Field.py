@@ -1,25 +1,41 @@
 # esta aposta pode ser feita em qualquer fase do jogo 
-import random
-def field (dado1, dado2):
-    aposta_field = int(input("Qual o valor da sua aposta pro Field?: "))
-    dado1 = random.randint(1,6)
-    dado2 = random.randint(1,6)
-    soma_f = dado1 + dado2
-    if soma_f == 12:
-        #jogador ganha
-        fichas = fichas + 3*aposta_field
-        return fichas
-    elif soma_f == 2:
-         #jogador ganha
-        fichas = fichas + 2*aposta_field
-        return fichas
-    elif soma_f == 3 or soma_f == 4 or soma_f == 9 or soma_f == 10 or soma_f == 11:
-         #jogador ganha
-        fichas = fichas + aposta_field
-        return fichas
-    else:
-        #jogador perde tudo, jogo acaba
-        fichas = fichas - fichas
-        return fichas
-        print ("Você perde tudo! Game over")
-        fichas_suficientes=False
+#field no point
+if soma_p == 12 and (aposta_f > 0):
+    #jogador ganha o field  
+    fichas = fichas + 3 * aposta_f
+    print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
+if soma_p == 2 and (aposta_f > 0):
+    #jogador ganha o field
+    fichas = fichas + 2 * aposta_f
+    print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
+if (soma_p == 3 or soma_p == 4 or soma_p == 9 or soma_p == 10 or soma_p == 11) and (aposta_f > 0):
+    #jogador ganha o field
+    fichas = fichas + aposta_f
+    print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
+if (soma_p == 5 or soma_p == 6 or soma_p == 7 or soma_p == 8) and (aposta_f > 0):
+    #jogador perde tudo, jogo acaba
+    fichas = fichas - fichas
+    print ("A soma dos dados foi = {0}. Você perde tudo! Game over. Fichas disponíveis = {1}".format(soma_p,fichas))
+    fichas_suficientes=False
+    break
+
+
+#field no come out
+if soma_co == 12 and (aposta_f > 0):
+    #jogador ganha o field
+    fichas = fichas + 3 * aposta_f 
+    print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
+if soma_co == 2 and (aposta_f > 0):
+    #jogador ganha o field
+    fichas = fichas + 2 * aposta_f
+    print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
+ if (soma_co == 3 or soma_co == 4 or soma_co == 9 or soma_co == 10 or soma_co == 11) and (aposta_f > 0):
+    #jogador ganha o field
+    fichas = fichas + aposta_f
+    print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
+if (soma_co == 5 or soma_co == 6 or soma_co == 7 or soma_co == 8) and (aposta_f > 0):
+    #jogador perde tudo, jogo acaba
+    fichas = fichas - fichas
+    print ("A soma dos dados no Field foi = {0}. Você perde tudo! Game over. Fichas disponíveis = {1}".format(soma_co,fichas))
+    fichas_suficientes=False
+    break

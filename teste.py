@@ -190,7 +190,7 @@ while fichas>0:
             fichas_suficientes=False
             break
         
-        #twelve
+        #twelve no come out
         if soma_co == 12 and (aposta_t > 0):
             #jogador ganha twelve
             fichas = fichas + 30 * aposta_t
@@ -200,7 +200,7 @@ while fichas>0:
             fichas = fichas - aposta_t
             print ("A soma dos dados foi = {0}. Você perde o Twelve. Fichas disponíveis = {1}".format(soma_co,fichas))
 
-        #any craps
+        #any craps no come out
         if (soma_co == 2 or soma_co == 3 or soma_co == 12) and (aposta_ac > 0):
             #jogador ganha any craps
             fichas = fichas + 7 * aposta_ac
