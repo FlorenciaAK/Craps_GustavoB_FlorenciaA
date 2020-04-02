@@ -1,6 +1,6 @@
 fichas = 50 #por exemplo já que a gente decide
-fichas_suficientes = (fichas>0) 
-jogar_dados=False
+
+jogar_dados = False
 
 aposta_plb = 0
 aposta_f = 0
@@ -8,6 +8,7 @@ aposta_ac = 0
 aposta_ac = 0
 aposta_t = 0
 
+fichas_suficientes = (fichas>0) 
 
 import random
 print ("Você está jogando")
@@ -18,15 +19,15 @@ while fichas_suficientes==True:
     while continuar == "c":
         print ("Fase Come Out (1ª fase)")
         while not jogar_dados:
-            tipo_aposta = input("Qual aposta você deseja realizar? pass line bet (psl) / field(f) / any craps (ac) / twelve(t) / jogar os dados (j): ")
-            if tipo_aposta=="psl":
-                aposta_plb= int(input("Qual o valor da sua aposta pro Pass Line Bet?: "))
+            tipo_aposta = input("Qual aposta você deseja realizar? pass line bet (plb) / field(f) / any craps (ac) / twelve(t) / jogar os dados (j): ")
+            if tipo_aposta=="plb":
+                aposta_plb= aposta_plb + int(input("Qual o valor da sua aposta pro Pass Line Bet?: "))
             if tipo_aposta=="f":
-                aposta_f= int(input("Qual o valor da sua aposta pro Field?: "))
+                aposta_f= aposta_f + int(input("Qual o valor da sua aposta pro Field?: "))
             if tipo_aposta=="ac":
-                aposta_ac= int(input("Qual o valor da sua aposta pro Any Craps?: "))
+                aposta_ac= aposta_ac + int(input("Qual o valor da sua aposta pro Any Craps?: "))
             if tipo_aposta=="t":
-                aposta_t= int(input("Qual o valor da sua aposta pro Twelve?: "))
+                aposta_t= aposta_t + int(input("Qual o valor da sua aposta pro Twelve?: "))
             if tipo_aposta=="j":
                 jogar_dados=True
 
@@ -57,11 +58,11 @@ while fichas_suficientes==True:
                 while not jogar_dados:
                     tipo_aposta = input("Qual aposta você deseja realizar? field(f) / any craps (ac) / twelve(t) / jogar os dados (j)")
                     if tipo_aposta=="f":
-                        aposta_f= int(input("Qual o valor da sua aposta pro Field?: "))
+                        aposta_f= aposta_f + int(input("Qual o valor da sua aposta pro Field?: "))
                     if tipo_aposta=="ac":
-                        aposta_ac= int(input("Qual o valor da sua aposta pro Any Craps?: "))
+                        aposta_ac= aposta_ac + int(input("Qual o valor da sua aposta pro Any Craps?: "))
                     if tipo_aposta=="t":
-                        aposta_t= int(input("Qual o valor da sua aposta pro Twelve?: "))
+                        aposta_t= aposta_t + int(input("Qual o valor da sua aposta pro Twelve?: "))
                     if tipo_aposta=="j":
                         jogar_dados=True
                 #field
@@ -98,11 +99,12 @@ while fichas_suficientes==True:
                     #jogador ganha any craps
                     fichas = fichas + 7 * aposta_ac
                     print ("Você acertou o Any Craps! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-                if soma_p != 2 or soma_p != 3 or soma_p != 12 and aposta_ac >0:
+                if soma_p != 2 or soma_p != 3 or soma_p != 12 and aposta_ac > 0:
                     #jogador perde any craps
                     fichas = fichas - aposta_ac
                     print ("A soma dos dados foi = {0}. Você perde o Any Craps.Fichas disponíveis = {1}".format(soma_p,fichas))
-                print("O point não foi acertado, você permanece no Point (segunda fase)")
+                
+                print("O point não foi acertado, você permanece no Point (2ª fase)")
 
             #if soma_p == point ou soma_p == 7
 
@@ -144,7 +146,7 @@ while fichas_suficientes==True:
             if soma_p != 12 and aposta_t > 0:
                 #jogador perde twelve
                 fichas = fichas - aposta_t
-                print ("A soma dos dados foi = {0}. Você perde o Twelve.Fichas disponíveis = {1}".format(soma_p,fichas))
+                print ("A soma dos dados foi = {0}. Você perde o Twelve. Fichas disponíveis = {1}".format(soma_p,fichas))
 
             #any craps
             if soma_p == 2 or soma_p == 3 or soma_p == 12 and aposta_ac > 0:
@@ -156,7 +158,8 @@ while fichas_suficientes==True:
                 fichas = fichas - aposta_ac
                 print ("A soma dos dados foi = {0}. Você perde o Any Craps.Fichas disponíveis = {1}".format(soma_p,fichas))
                 
-            print("O point foi acertado, você volta para o Come Out (primeira fase)")
+            print("O point foi acertado, você volta para o Come Out (1ª fase)")
+
         #field
         if soma_p == 12 and aposta_f > 0:
             #jogador ganha o field
@@ -197,8 +200,4 @@ while fichas_suficientes==True:
             print ("A soma dos dados foi = {0}. Você perde o Any Craps.Fichas disponíveis = {1}".format(soma_p,fichas))
 
 
-
-    else:
-        print ("Obrigado por jogar, volte sempre!")
-        break
-
+print ("Obrigado por jogar, volte sempre!")
