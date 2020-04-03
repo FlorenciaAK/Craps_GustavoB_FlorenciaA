@@ -10,7 +10,6 @@ while fichas>0:
         aposta_plb = 0
         aposta_f = 0
         aposta_ac = 0
-        aposta_ac = 0
         aposta_t = 0
 
         while not jogar_dados:
@@ -27,24 +26,30 @@ while fichas>0:
                 jogar_dados=True
 
 #Durante o Jogo (loop Point)
-while not jogar_dados:
-                    tipo_aposta = input("Qual aposta você deseja realizar? field(f) / any craps (ac) / twelve(t) / jogar os dados (j)")
-                    if tipo_aposta=="f":
-                        aposta_f += int(input("Qual o valor da sua aposta pro Field?: "))
-                    if tipo_aposta=="ac":
-                        aposta_ac += int(input("Qual o valor da sua aposta pro Any Craps?: "))
-                    if tipo_aposta=="t":
-                        aposta_t += int(input("Qual o valor da sua aposta pro Twelve?: "))
-                    if tipo_aposta=="j":
-                        jogar_dados=True
+            
+            jogar_dados = False
+    
+            aposta_f2 = 0
+            aposta_ac2 = 0
+            aposta_t2 = 0
 
+            while not jogar_dados:
+                tipo_aposta = input("Qual aposta você deseja realizar? field(f) / any craps (ac) / twelve(t) / jogar os dados (j): ")
+                if tipo_aposta=="f":
+                    aposta_f2 += int(input("Qual o valor da sua aposta pro Field?: "))
+                if tipo_aposta=="ac":
+                    aposta_ac2 += int(input("Qual o valor da sua aposta pro Any Craps?: "))
+                if tipo_aposta=="t":
+                    aposta_t2 += int(input("Qual o valor da sua aposta pro Twelve?: "))
+                if tipo_aposta=="j":
+                    jogar_dados=True
 
 # dados no come out 
-  dado1 = random.randint(1,6)
-        dado2 = random.randint(1,6)
-        soma_co = dado1+dado2 #soma come out
+dado1 = random.randint(1,6)
+dado2 = random.randint(1,6)
+soma_co = dado1+dado2 #soma come out
 
 #dados no poit 
-  dado1 = random.randint(1,6)
-        dado2 = random.randint(1,6)
-        soma_p = dado1+dado2 #soma point
+dado1 = random.randint(1,6)
+dado2 = random.randint(1,6)
+soma_p = dado1+dado2 #soma point

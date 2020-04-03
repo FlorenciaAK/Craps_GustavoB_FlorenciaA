@@ -13,7 +13,7 @@ while fichas>0:
     if continuar == "a":
         break
     else:
-        print ("Fase Come Out (1ª fase)")
+        print ("{}Fase Come Out (1ª fase){}".format('\033[1;31m','\033[m'))
 
         aposta_plb = 0
         aposta_f = 0
@@ -42,15 +42,15 @@ while fichas>0:
             #jogador ganha o field
             fichas = fichas + 3 * aposta_f 
             print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
-        if soma_co == 2 and (aposta_f > 0):
+        elif soma_co == 2 and (aposta_f > 0):
             #jogador ganha o field
             fichas = fichas + 2 * aposta_f
             print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
-        if (soma_co == 3 or soma_co == 4 or soma_co == 9 or soma_co == 10 or soma_co == 11) and (aposta_f > 0):
+        elif (soma_co == 3 or soma_co == 4 or soma_co == 9 or soma_co == 10 or soma_co == 11) and (aposta_f > 0):
             #jogador ganha o field
             fichas = fichas + aposta_f
             print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
-        if (soma_co == 5 or soma_co == 6 or soma_co == 7 or soma_co == 8) and (aposta_f > 0):
+        elif (soma_co == 5 or soma_co == 6 or soma_co == 7 or soma_co == 8) and (aposta_f > 0):
             #jogador perde tudo, jogo acaba
             fichas = fichas - fichas
             print ("Você perde tudo. Game over. A soma dos dados no Field foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
@@ -62,7 +62,7 @@ while fichas>0:
             #jogador ganha twelve
             fichas = fichas + 30 * aposta_t
             print ("Você acertou o Twelve! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
-        if soma_co != 12 and (aposta_t > 0):
+        elif soma_co != 12 and (aposta_t > 0):
             #jogador perde twelve
             fichas = fichas - aposta_t
             print ("Você perde o Twelve. A soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
@@ -72,7 +72,7 @@ while fichas>0:
             #jogador ganha any craps
             fichas = fichas + 7 * aposta_ac
             print ("Você acertou o Any Craps! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
-        if (soma_co != 2 or soma_co != 3 or soma_co != 12) and (aposta_ac > 0):
+        elif (soma_co != 2 or soma_co != 3 or soma_co != 12) and (aposta_ac > 0):
             #jogador perde any craps
             fichas = fichas - aposta_ac
             print ("Você perde o Any Craps. A soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
@@ -83,16 +83,16 @@ while fichas>0:
             fichas = fichas + aposta_plb
             print ("Você acertou o Pass Line Bet! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co,fichas))
 
-        if (soma_co == 2 or soma_co == 3 or soma_co == 12) and (aposta_plb > 0):
+        elif (soma_co == 2 or soma_co == 3 or soma_co == 12) and (aposta_plb > 0):
             #jogador perde pass line bet
             fichas = fichas - aposta_plb
             print ("Você perdeu o Pas Line Bet! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_co, fichas))
 
-        if (soma_co == 4 or soma_co == 5 or soma_co == 6 or soma_co == 8 or soma_co == 9 or soma_co == 10) and (aposta_plb > 0):
+        elif (soma_co == 4 or soma_co == 5 or soma_co == 6 or soma_co == 8 or soma_co == 9 or soma_co == 10) and (aposta_plb > 0):
             point = soma_co 
             print ("A soma dos dados é {0}, o jogo passa para a fase Point (2ª fase) e a sua aposta permanece p/ o PSL. Fichas disponíveis = {1}".format(point,fichas))
             
-            print ("Fase Point (2ª fase)")
+            print ("{}Fase Point (2ª fase){}".format('\033[1;31m','\033[m'))
 
             dado1 = random.randint(1,6)
             dado2 = random.randint(1,6)
@@ -122,18 +122,18 @@ while fichas>0:
                     #jogador ganha o field
                     fichas = fichas + 3 * aposta_f2
                     print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-                if soma_p == 2 and (aposta_f2 > 0):
+                elif soma_p == 2 and (aposta_f2 > 0):
                     #jogador ganha o field
                     fichas = fichas + 2 * aposta_f2
                     print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-                if (soma_p == 3 or soma_p == 4 or soma_p == 9 or soma_p == 10 or soma_p == 11) and (aposta_f2 > 0):
+                elif (soma_p == 3 or soma_p == 4 or soma_p == 9 or soma_p == 10 or soma_p == 11) and (aposta_f2 > 0):
                     #jogador ganha o field
                     fichas = fichas + aposta_f2
                     print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-                if (soma_p == 5 or soma_p == 6 or soma_p == 7 or soma_p == 8) and (aposta_f2 > 0):
+                elif (soma_p == 5 or soma_p == 6 or soma_p == 7 or soma_p == 8) and (aposta_f2 > 0):
                     #jogador perde tudo, jogo acaba
                     fichas = fichas - fichas
-                    print ("Você perde tudo. Game over. A soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
+                    print ("Você perde tudo. Game over. A soma dos dados no Field foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
                     fichas_suficientes=False
                     break
                 
@@ -142,7 +142,7 @@ while fichas>0:
                     #jogador ganha twelve
                     fichas = fichas + 30 * aposta_t2
                     print ("Você acertou o Twelve! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-                if soma_p != 12 and (aposta_t2 > 0):
+                elif soma_p != 12 and (aposta_t2 > 0):
                     #jogador perde twelve
                     fichas = fichas - aposta_t2
                     print ("Você perde o Twelve. A soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
@@ -152,13 +152,13 @@ while fichas>0:
                     #jogador ganha any craps
                     fichas = fichas + 7 * aposta_ac2
                     print ("Você acertou o Any Craps! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-                if (soma_p != 2 or soma_p != 3 or soma_p != 12) and (aposta_ac2 > 0):
+                elif (soma_p != 2 or soma_p != 3 or soma_p != 12) and (aposta_ac2 > 0):
                     #jogador perde any craps
                     fichas = fichas - aposta_ac2
                     print ("Você perde o Any Craps. A soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
                 
                 
-                print("O point não foi acertado, você permanece no Point (2ª fase). A soma dos dados foi {0}.".format(soma_p))
+                print ("O point não foi acertado, você permanece no Point (2ª fase). A soma dos dados foi {0}.".format(soma_p))
                 
                 dado1 = random.randint(1,6)
                 dado2 = random.randint(1,6)
@@ -188,10 +188,10 @@ while fichas>0:
                 #jogador ganha
                 fichas = fichas + aposta_plb
                 print ("Você acertou o Point! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format (soma_p, fichas))
-            if soma_p == 7:
+            elif soma_p == 7:
                 #jogador perde tudo, jogo acaba
                 fichas = fichas - fichas
-                print ("Você perde tudo. Game over. Soma dos dados foi = {0}. Fichas disponíveis = {1}".format (soma_p, fichas))
+                print ("Você perde tudo. Game over. Soma dos dados no Point foi = {0}. Fichas disponíveis = {1}".format (soma_p, fichas))
                 fichas_suficientes=False
                 break
             
@@ -200,18 +200,18 @@ while fichas>0:
                 #jogador ganha o field
                 fichas = fichas + 3 * aposta_f2
                 print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-            if soma_p == 2 and (aposta_f2 > 0):
+            elif soma_p == 2 and (aposta_f2 > 0):
                 #jogador ganha o field
                 fichas = fichas + 2 * aposta_f2
                 print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-            if (soma_p == 3 or soma_p == 4 or soma_p == 9 or soma_p == 10 or soma_p == 11) and (aposta_f2 > 0):
+            elif (soma_p == 3 or soma_p == 4 or soma_p == 9 or soma_p == 10 or soma_p == 11) and (aposta_f2 > 0):
                 #jogador ganha o field
                 fichas = fichas + aposta_f2
                 print ("Você acertou o Field! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-            if (soma_p == 5 or soma_p == 6 or soma_p == 7 or soma_p == 8) and (aposta_f2 > 0):
+            elif (soma_p == 5 or soma_p == 6 or soma_p == 7 or soma_p == 8) and (aposta_f2 > 0):
                 #jogador perde tudo, jogo acaba
                 fichas = fichas - fichas
-                print ("Você perde tudo. Game over. A soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
+                print ("Você perde tudo. Game over. A soma dos dados no Field foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
                 fichas_suficientes=False
                 break
             
@@ -220,7 +220,7 @@ while fichas>0:
                 #jogador ganha twelve
                 fichas = fichas + 30 * aposta_t2
                 print ("Você acertou o Twelve! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-            if soma_p != 12 and (aposta_t2 > 0):
+            elif soma_p != 12 and (aposta_t2 > 0):
                 #jogador perde twelve
                 fichas = fichas - aposta_t2
                 print ("Você perde o Twelve. A soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
@@ -230,7 +230,7 @@ while fichas>0:
                 #jogador ganha any craps
                 fichas = fichas + 7 * aposta_ac2
                 print ("Você acertou o Any Craps! Soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
-            if (soma_p != 2 or soma_p != 3 or soma_p != 12) and (aposta_ac2 > 0):
+            elif (soma_p != 2 or soma_p != 3 or soma_p != 12) and (aposta_ac2 > 0):
                 #jogador perde any craps
                 fichas = fichas - aposta_ac2
                 print ("Você perde o Any Craps. A soma dos dados foi = {0}. Fichas disponíveis = {1}".format(soma_p,fichas))
