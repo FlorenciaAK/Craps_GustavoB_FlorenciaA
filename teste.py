@@ -60,6 +60,7 @@ while fichas>0:
             soma_p = dado1+dado2 #soma point
             
             while soma_p != point and soma_p != 7 and fichas > 0:
+                jogar_dados = False
                 while not jogar_dados:
                     tipo_aposta = input("Qual aposta você deseja realizar? field(f) / any craps (ac) / twelve(t) / jogar os dados (j)")
                     if tipo_aposta=="f":
