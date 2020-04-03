@@ -37,3 +37,14 @@ while not jogar_dados:
                         aposta_t += int(input("Qual o valor da sua aposta pro Twelve?: "))
                     if tipo_aposta=="j":
                         jogar_dados=True
+
+
+# dados no come out 
+  dado1 = random.randint(1,6)
+        dado2 = random.randint(1,6)
+        soma_co = dado1+dado2 #soma come out
+
+#dados no poit 
+  dado1 = random.randint(1,6)
+        dado2 = random.randint(1,6)
+        soma_p = dado1+dado2 #soma point

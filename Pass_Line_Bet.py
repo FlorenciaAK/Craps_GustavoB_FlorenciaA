@@ -2,11 +2,6 @@
 
      print ("Fase Come Out (1ª fase)")
 
-        #pode fazer outras apostas
-
-         dado1 = random.randint(1,6)
-         dado2 = random.randint(1,6)
-        soma_co = dado1+dado2 #soma come out
         
         #Pass Line Bet
         if (soma_co == 7 or soma_co == 11) and (aposta_plb > 0):
